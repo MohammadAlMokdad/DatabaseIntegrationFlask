@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>CRUD App</title>
+  </head>
+  <body>
+    <h2>Add User:</h2>
+    <form method="post" action="{{ url_for('add_user') }}">
+      <label>Username:</label>
+      <input type="text" name="username" required />
+      <label>Email:</label>
+      <input type="email" name="email" required />
+      <button type="submit">Add User</button>
+    </form>
+    <h2>Add Post:</h2>
+    <form method="post" action="{{ url_for('add_post') }}">
+      <label>Content:</label>
+      <textarea name="content" required></textarea>
+      <label>User ID:</label>
+      <input type="number" name="user_id" required />
+      <button type="submit">Add Post</button>
+    </form>
+
+    <h2>Update Post:</h2>
+    <form method="post" action="{{ url_for('update_post') }}">
+      <label>Post ID:</label>
+      <input type="number" name="post_id" required />
+      <label>New Content:</label>
+      <textarea name="new_content" required></textarea>
+      <button type="submit">Update Post</button>
+    </form>
+
+    <h2>Delete Post:</h2>
+    <form method="post" action="{{ url_for('delete_post') }}">
+      <label>Post ID:</label>
+      <input type="number" name="post_id" required />
+      <button type="submit">Delete Post</button>
+    </form>
+    <h2>Add Comment:</h2>
+    <form method="post" action="{{ url_for('add_comment') }}">
+      <label>Comment:</label>
+      <textarea name="comment" required></textarea>
+      <label>Post ID:</label>
+      <input type="number" name="post_id" required />
+      <button type="submit">Add Comment</button>
+    </form>
+
+    <h2>Update Comment:</h2>
+    <form method="post" action="{{ url_for('update_comment') }}">
+      <label>Comment ID:</label>
+      <input type="number" name="comment_id" required />
+      <label>New Comment:</label>
+      <textarea name="new_comment" required></textarea>
+      <button type="submit">Update Comment</button>
+    </form>
+
+    <h2>Delete Comment:</h2>
+    <form method="post" action="{{ url_for('delete_comment') }}">
+      <label>Comment ID:</label>
+      <input type="number" name="comment_id" required />
+      <button type="submit">Delete Comment</button>
+    </form>
+  </body>
+</html>
